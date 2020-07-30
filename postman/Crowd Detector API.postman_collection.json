@@ -1,0 +1,607 @@
+{
+	"info": {
+		"_postman_id": "5395840c-827c-43b9-92f3-dd938736fdef",
+		"name": "Crowd Detector API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Elements",
+			"item": [
+				{
+					"name": "All Elements",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aviv\",\n    \"location\": {\n        \"latitude\": 32.115129,\n        \"longitude\": 34.871529\n    },\n    \"createdTimstamp\": \"2020-03-31T14:42:33.521+0000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/elements/TestUserPlayer@tst.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"elements",
+								"TestUserPlayer@tst.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Elements Paginated",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aviv\",\n    \"location\": {\n        \"latitude\": 32.115129,\n        \"longitude\": 34.871529\n    },\n    \"createdTimstamp\": \"2020-03-31T14:42:33.521+0000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/elements/TestUserPlayer@tst.com?page=1&size=5",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"elements",
+								"TestUserPlayer@tst.com"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Elements By Name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aviv\",\n    \"location\": {\n        \"latitude\": 32.115129,\n        \"longitude\": 34.871529\n    },\n    \"createdTimstamp\": \"2020-03-31T14:42:33.521+0000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/elements/TestUserPlayer@tst.com/search/byName/Alon?page=1&size=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"elements",
+								"TestUserPlayer@tst.com",
+								"search",
+								"byName",
+								"Alon"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Elements By Type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/elements/TestUserManager@tst.com/search/byType/assast?page=1&size=2",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"elements",
+								"TestUserManager@tst.com",
+								"search",
+								"byType",
+								"assast"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Element By ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Aviv\",\n    \"location\": {\n        \"latitude\": 32.115129,\n        \"longitude\": 34.871529\n    },\n    \"createdTimstamp\": \"2020-03-31T14:42:33.521+0000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/elements/TestUserPlayer@tst.com/1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"elements",
+								"TestUserPlayer@tst.com",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Element",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"personEntity\",\r\n    \"name\": \"Alon\",\r\n    \"active\": true,\r\n    \"location\": {\r\n        \"latitude\": 32.115129,\r\n        \"longitude\": 34.871529\r\n    },\r\n    \"elementAttributes\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/elements/TestUserManager@tst.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"elements",
+								"TestUserManager@tst.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Element",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"elementId\": \"2fe8ad3c-a288-459d-856a-9a7b3067f62b\",\r\n    \"type\": \"personEntity\",\r\n    \"name\": \"Alonnnn\",\r\n    \"active\": true,\r\n    \"createdTimestamp\": \"2020-03-31T17:21:28.288+0000\",\r\n    \"createdBy\": {\r\n        \"email\": \"alon@alon.com\"\r\n    },\r\n    \"location\": {\r\n        \"latitude\": 32.115129,\r\n        \"longitude\": 34.871529\r\n    },\r\n    \"elementAttributes\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/elements/TestUserManager@tst.com/2fe8ad3c-a288-459d-856a-9a7b3067f62b",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"elements",
+								"TestUserManager@tst.com",
+								"2fe8ad3c-a288-459d-856a-9a7b3067f62b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add child to Element",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/elements/TestUserManager@tst.com/0/children",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"elements",
+								"TestUserManager@tst.com",
+								"0",
+								"children"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all children of Element",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/acs/elements/TestUserPlayer@tst.com/0/children?page=0&size=2",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"elements",
+								"TestUserPlayer@tst.com",
+								"0",
+								"children"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all parents of Element",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/acs/elements/TestUserPlayer@tst.com/0/parents?page=0&size=1",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"elements",
+								"TestUserPlayer@tst.com",
+								"0",
+								"parents"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Actions",
+			"item": [
+				{
+					"name": "Get All Actions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/acs/actions/TestUserAdmin@tst.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"actions",
+								"TestUserAdmin@tst.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invoke Action",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": \"userEnvironment\",\r\n    \"invokedBy\": \"TestUserPlayer3@tst.com\",\r\n    \"actionAttributes\":\r\n    {\r\n    \t\"lat\":\"31\",\r\n    \t\"lng\":\"32\"\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/actions",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"actions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"TestUser@test.com\",\r\n    \"role\":\"PLAYER\",\r\n    \"username\": \"User\",\r\n    \"avatar\": \"Avatar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/users/",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"users",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Send Post request with user attribute payload.\nThe response will be the new user attribute."
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/acs/users/login/TestUserAdmin@tst.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"users",
+								"login",
+								"TestUserAdmin@tst.com"
+							]
+						},
+						"description": "Sent Get request with User Email in the URL.\nResponse will be User attribure or an error."
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"TestUserPlayer1@tst.com\",\r\n    \"role\": \"MANAGER\",\r\n    \"username\": \"Player1 to Manager\",\r\n    \"avatar\": \"Player1 to Manager Avatar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/acs/users/TestUserManager2@tst.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"users",
+								"TestUserManager2@tst.com"
+							]
+						},
+						"description": "Send Put request with user Email in the URL and new user attribute in the payload.\nNo response. \n"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Delete All Users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/acs/admin/users/TestUserAdmin@tst.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"admin",
+								"users",
+								"TestUserAdmin@tst.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Elements",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/acs/admin/elements/TestUserAdmin@tst.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"admin",
+								"elements",
+								"TestUserAdmin@tst.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete All Actions",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/acs/admin/actions/TestUserAdmin@tst.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"admin",
+								"actions",
+								"TestUserAdmin@tst.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/acs/admin/users/TestUserAdmin@tst.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"admin",
+								"users",
+								"TestUserAdmin@tst.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export All Actions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/acs/admin/actions/TestUserAdmin@tst.com",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"acs",
+								"admin",
+								"actions",
+								"TestUserAdmin@tst.com"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

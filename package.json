@@ -1,0 +1,46 @@
+{
+  "name": "CrowdDetector",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "",
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "yarn --cwd packages/client start",
+    "build": "yarn --cwd packages/client build",
+    "cypress:open": "yarn --cwd packages/client cypress:open",
+    "prettier": "npm-run-all --parallel prettier:client prettier:java",
+    "prettier:ci": "npm-run-all --parallel prettier:client prettier:ci:java",
+    "prettier:write": "npm-run-all --parallel prettier:client:write prettier:java:write",
+    "prettier:client": "yarn --cwd packages/client prettier",
+    "prettier:client:write": "yarn --cwd packages/client prettier:write",
+    "prettier:java": "prettier -l \"**/*.java\"",
+    "prettier:ci:java": "prettier -l \"**/*.java\" --end-of-line lf",
+    "prettier:java:write": "prettier --write \"**/*.java\"",
+    "mock:users": "set REACT_APP_SERVER_URL=https://crowd-detector.herokuapp.com && node scripts/mock-users.js",
+    "mock:locations": "set REACT_APP_SERVER_URL=https://crowd-detector.herokuapp.com && node scripts/mock-locations.js"
+  },
+  "devDependencies": {
+    "axios": "^0.19.2",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4",
+    "prettier-plugin-java": "^0.7.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{java}": [
+      "prettier:write",
+      "git add"
+    ]
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "proxy": "https://localhost:3000"
+}

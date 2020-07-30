@@ -1,0 +1,15 @@
+{
+    "tabWidth": 2,
+    "printWidth": 80,
+    "endOfLine": "crlf",
+    "singleQuote": true,
+    "overrides": [
+        {
+            "files": "*.java",
+            "options": {
+                "tabWidth": 4,
+                "printWidth": 120
+            }
+        }
+    ]
+}

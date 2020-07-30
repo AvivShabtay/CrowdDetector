@@ -1,0 +1,47 @@
+definitions:
+  steps:
+    - step: &lint
+        name: Check source code formatting
+        image: node:10.15.3
+        caches:
+          - node
+        script:
+          - curl -o- -L https://yarnpkg.com/install.sh | bash
+          - yarn install --frozen-lockfile
+          - yarn prettier:ci
+    - step: &test
+        name: Run Maven tests
+        image: maven:3.6.3
+        caches:
+          - maven
+        script:
+          - mvn validate
+          - mvn clean package
+          - mvn compile
+          - mvn test
+    - step: &deploy
+        name: Deploy Spring app to production
+        deployment: production
+        image: maven:3.6.3
+        caches:
+          - maven
+        script:
+          - tar czfv deploy.tgz src pom.xml
+          - pipe: atlassian/heroku-deploy:0.1.1
+            variables:
+              HEROKU_API_KEY: $HEROKU_API_KEY
+              HEROKU_APP_NAME: $HEROKU_APP_NAME
+              ZIP_FILE: deploy.tgz
+
+pipelines:
+  pull-requests:
+    '**':
+      - parallel:
+          - step: *lint
+          - step: *test
+  branches:
+    master:
+      - parallel:
+          - step: *lint
+          - step: *test
+      - step: *deploy
