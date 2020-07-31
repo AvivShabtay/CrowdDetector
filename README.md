@@ -7,12 +7,19 @@
     <img src="https://img.shields.io/badge/contributions-welcome-orange.svg">
 </p>
 
+## Contributors
+* Aviv Shabtay 
+* Alon Bukai
+* Elior Shriki
+* Or Pinhas
+
 ## Purpose
 Fight the spread of COVID-19 virus by allow users to identify whether they are in a crowd.
 
 ## Demo
-<img src="images/signin_demo.gif" width=300>
-<img src="images/map_red.gif" width=300>
+|                   Sign-in                    |                  Risks                   |
+| :------------------------------------------: | :--------------------------------------: |
+| <img src="images/signin_demo.gif" width=300> | <img src="images/map_red.gif" width=300> |
 
 ## Architecture
 
