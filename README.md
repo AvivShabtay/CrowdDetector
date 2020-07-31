@@ -8,10 +8,10 @@
 </p>
 
 ## Contributors
-* Aviv Shabtay 
-* Alon Bukai
-* Elior Shriki
-* Or Pinhas
+* [Aviv Shabtay](https://github.com/AvivShabtay)
+* [Alon Bukai](https://github.com/Alonski)
+* [Elior Shriki](https://github.com/EliorShriki)
+* [Or Pinhas](https://github.com/orpinhas20)
 
 ## Purpose
 Fight the spread of COVID-19 virus by allow users to identify whether they are in a crowd.
