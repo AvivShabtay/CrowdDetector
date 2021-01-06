@@ -22,7 +22,7 @@
     "mock:locations": "set REACT_APP_SERVER_URL=https://crowd-detector.herokuapp.com && node scripts/mock-locations.js"
   },
   "devDependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "husky": "^4.2.5",
     "lint-staged": "^10.1.3",
     "prettier": "^2.0.4",
